@@ -1,0 +1,11 @@
+"use strict";
+
+var a = 1;
+
+for (var i = 0; i < 10; i++) {
+	console.log(i);
+}
+
+var PRICE = 100;
+
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxldC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLElBQUksSUFBSSxDQUFSOztBQUdBLEtBQUssSUFBSSxJQUFJLENBQWIsRUFBaUIsSUFBRSxFQUFuQixFQUF1QixHQUF2QixFQUEyQjtBQUMxQixTQUFRLEdBQVIsQ0FBWSxDQUFaO0FBQ0E7O0FBRUQsSUFBTSxRQUFRLEdBQWQiLCJmaWxlIjoibGV0X2VzNS5qcyIsInNvdXJjZXNDb250ZW50IjpbImxldCBhID0gMTtcblxuXG5mb3IgKGxldCBpID0gMCA7IGk8MTA7IGkrKyl7XG5cdGNvbnNvbGUubG9nKGkpO1xufVxuXG5jb25zdCBQUklDRSA9IDEwMDtcblxuIl19
