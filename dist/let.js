@@ -1,9 +1,12 @@
 "use strict";
 
-var a = 1;
-
+var a = void 0;
+a.name = 1;
+console.error("a.");
 for (var i = 0; i < 10; i++) {
-	console.log(i);
-}
+  /**
+   * @param it's a test function
+   */
 
-var PRICE = 100;
+  console.log("a.");
+}

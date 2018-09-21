@@ -1,1 +1,0 @@
-{"version":3,"sources":["let.js"],"names":[],"mappings":";;AAAA,IAAI,IAAI,CAAR;;AAGA,KAAK,IAAI,IAAI,CAAb,EAAiB,IAAE,EAAnB,EAAuB,GAAvB,EAA2B;AAC1B,SAAQ,GAAR,CAAY,CAAZ;AACA;;AAED,IAAM,QAAQ,GAAd","file":"let_es5.js","sourcesContent":["let a = 1;\n\n\nfor (let i = 0 ; i<10; i++){\n\tconsole.log(i);\n}\n\nconst PRICE = 100;\n\n"]}

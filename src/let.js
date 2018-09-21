@@ -1,9 +1,10 @@
-let a = 1;
+let a;
+a.name = 1;
+console.error("a.");
+for (let i = 0; i < 10; i++) {
+/**
+ * @param it's a test function
+ */
 
-
-for (let i = 0 ; i<10; i++){
-	console.log(i);
+	console.log("a.");
 }
-
-const PRICE = 100;
-

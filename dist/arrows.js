@@ -23,4 +23,4 @@ console.log(odds2);
 var m = function m(v, i) {
   return v * i + 7;
 };
-console.log(1, 3);
+console.log(m(1, 3));
