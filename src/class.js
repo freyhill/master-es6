@@ -10,7 +10,7 @@ class Animal {
  */
 	constructor(obj) {
 		this.obj = obj;
-		this.liveWhere = this.liveWhere.bind(this);
+		this.liveWhere = this.liveWhere.bind(this); // 将this绑定到方法上
 		console.log("i will execute when new a instance of a class ");
 	}
 
@@ -19,6 +19,20 @@ class Animal {
 	 */
 	toString() {
 		return (`${this.kinds}类中的${this.name}`);
+	}
+
+	/**
+	 * @get
+	 */
+	get prop() {
+		return this.obj;
+	}
+
+	/**
+	 * @set
+	 */
+	set prop(obj) {
+		this.obj = obj;
 	}
 
 	/**
@@ -52,3 +66,11 @@ const { liveWhere } = cat;
 liveWhere("haha");
 // 调用静态方法
 console.log(Animal.whichAnimal());
+// 调用初始化属性值
+console.log(cat.obj.kinds);
+// getter 获取属性
+console.log("getter", cat.prop);
+// setter 设置属性
+cat.prop = 1111;
+
+console.log("update setter", cat.prop);

@@ -1,8 +1,14 @@
 "use strict";
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require("babel-runtime/helpers/createClass");
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * @class 创建一个类
@@ -15,10 +21,10 @@ var Animal = function () {
   * @Notice constructor 中的this表示实例对象 也可以手动改为成其他对象
   */
 	function Animal(obj) {
-		_classCallCheck(this, Animal);
+		(0, _classCallCheck3.default)(this, Animal);
 
 		this.obj = obj;
-		this.liveWhere = this.liveWhere.bind(this);
+		this.liveWhere = this.liveWhere.bind(this); // 将this绑定到方法上
 		console.log("i will execute when new a instance of a class ");
 	}
 
@@ -27,16 +33,15 @@ var Animal = function () {
   */
 
 
-	_createClass(Animal, [{
+	(0, _createClass3.default)(Animal, [{
 		key: "toString",
 		value: function toString() {
 			return this.kinds + "\u7C7B\u4E2D\u7684" + this.name;
 		}
 
 		/**
-   * @Static Function 静态函数
-   * @Use 类名可以直接调用 Animal.drump(2);
-  	 */
+   * @get
+   */
 
 	}, {
 		key: "liveWhere",
@@ -50,13 +55,31 @@ var Animal = function () {
 		value: function liveWhere(who) {
 			console.log(who + " living in " + (this.obj.place ? this.obj.place : ""));
 		}
+	}, {
+		key: "prop",
+		get: function get() {
+			return this.obj;
+		}
+
+		/**
+   * @set
+   */
+		,
+		set: function set(obj) {
+			this.obj = obj;
+		}
+
+		/**
+   * @Static Function 静态函数
+   * @Use 类名可以直接调用 Animal.drump(2);
+  	 */
+
 	}], [{
 		key: "whichAnimal",
 		value: function whichAnimal() {
 			return "this is a static function";
 		}
 	}]);
-
 	return Animal;
 }();
 
@@ -70,9 +93,17 @@ var cat = new Animal({ kinds: "鸟类", name: "蝴蝶", place: "亚洲" });
 // 调用实例方法
 cat.liveWhere("iam");
 
-// 如果下面这样使用 shis指向会出错 解决方法是在constructor里bind this 
+// 如果下面这样使用 shis指向会出错 解决方法是在constructor里bind this
 var liveWhere = cat.liveWhere;
 
 liveWhere("haha");
 // 调用静态方法
 console.log(Animal.whichAnimal());
+// 调用初始化属性值
+console.log(cat.obj.kinds);
+// getter 获取属性
+console.log("getter", cat.prop);
+// setter 设置属性
+cat.prop = 1111;
+
+console.log("update setter", cat.prop);
