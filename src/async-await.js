@@ -1,4 +1,7 @@
-import "babel-polyfill";
+/**
+ * @async
+ */
+require("babel-polyfill");
 
 /**
  * @param {num}
@@ -29,6 +32,7 @@ async function asyncFunc() {
     return error;
   }
 }
+
 asyncFunc().then((x) => {
   console.log(x);
 });

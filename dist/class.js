@@ -7,16 +7,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 /**
  * @class 创建一个类
  */
+
 var Animal = function () {
 	/**
   * @constructor 类的默认方法
   * @Use 当new一个类的实例时，自动调用该方法，每个类都必须有一个constructor方法，如果没有手动写，会有一个空的constructor方法默认被添加
   * @Notice constructor 中的this表示实例对象 也可以手动改为成其他对象
- 	 */
+  */
 	function Animal(obj) {
 		_classCallCheck(this, Animal);
 
 		this.obj = obj;
+		this.liveWhere = this.liveWhere.bind(this);
 		console.log("i will execute when new a instance of a class ");
 	}
 
@@ -68,5 +70,9 @@ var cat = new Animal({ kinds: "鸟类", name: "蝴蝶", place: "亚洲" });
 // 调用实例方法
 cat.liveWhere("iam");
 
+// 如果下面这样使用 shis指向会出错 解决方法是在constructor里bind this 
+var liveWhere = cat.liveWhere;
+
+liveWhere("haha");
 // 调用静态方法
 console.log(Animal.whichAnimal());

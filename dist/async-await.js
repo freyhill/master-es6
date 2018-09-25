@@ -1,5 +1,8 @@
 "use strict";
 
+/**
+ * @async
+ */
 require("babel-polyfill");
 
 /**
@@ -31,6 +34,7 @@ async function asyncFunc() {
     return error;
   }
 }
+
 asyncFunc().then(function (x) {
   console.log(x);
 });
