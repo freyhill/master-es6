@@ -1,8 +1,8 @@
 "use strict";
 
-var name = "Bob",
-    time = "today";
-var s = "Hello " + name + ", how are you " + time + "?";
-var des = "\n\na,\nsdf\nxxd\ndf\nthis.state.sdf\nxdf\nxdfc\nsdf\n" + name + "\n\n\n";
+var name = "Bob";
+var time = "today";
+var str = "Hello " + name + ", how are you " + time + "?";
+var des = "\nthis\nis\na\nlong\ndesc\n\n";
 
-console.log(des);
+console.log(des, str);

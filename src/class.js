@@ -3,15 +3,28 @@
  */
 
 class Animal {
-/**
- * @constructor 类的默认方法
- * @Use 当new一个类的实例时，自动调用该方法，每个类都必须有一个constructor方法，如果没有手动写，会有一个空的constructor方法默认被添加
- * @Notice constructor 中的this表示实例对象 也可以手动改为成其他对象
- */
+	/**
+	 * @property
+	 * 类的实例属性
+	 */
+	 myProp = 30;
+
+  /**
+   * @static property
+   * 类的静态属性
+   */
+ 	static myStaticProp = 30;
+
+	/**
+	 * @constructor 类的默认方法
+	 * @Use 当new一个类的实例时，自动调用该方法，每个类都必须有一个constructor方法，如果没有手动写，会有一个空的constructor方法默认被添加
+	 * @Notice constructor 中的this表示实例对象 也可以手动改为成其他对象
+	 */
 	constructor(obj) {
 		this.obj = obj;
 		this.liveWhere = this.liveWhere.bind(this); // 将this绑定到方法上
 		console.log("i will execute when new a instance of a class ");
+		console.log(this.myProp);
 	}
 
 	/*
@@ -44,6 +57,19 @@ class Animal {
 	}
 
 	/**
+	 * @Static Function 静态函数
+	 * this指向的是类本身 而不是实例
+	 * 静态方法可被继承
+ 	 */
+	static staticFun() {
+
+		//调用静态属性
+		console.log(this.myStaticProp);
+		//调用静态方法
+		return this.whichAnimal();
+	}
+
+	/**
 	 * 类方法
 	 * @Notice 定义类的方法时前面不要加function
 	 * @Notice 方法之间不要用逗号
@@ -66,11 +92,21 @@ const { liveWhere } = cat;
 liveWhere("haha");
 // 调用静态方法
 console.log(Animal.whichAnimal());
+// 测试静态方法中的this
+console.log(Animal.staticFun());
 // 调用初始化属性值
 console.log(cat.obj.kinds);
 // getter 获取属性
 console.log("getter", cat.prop);
 // setter 设置属性
 cat.prop = 1111;
-
 console.log("update setter", cat.prop);
+
+/**
+ * [类的继承]
+ * @class
+ * @extends
+ */
+class Dog extends Animal {
+}
+console.log("继承", Dog.staticFun());

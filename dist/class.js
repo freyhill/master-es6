@@ -1,5 +1,13 @@
 "use strict";
 
+var _possibleConstructorReturn2 = require("babel-runtime/helpers/possibleConstructorReturn");
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require("babel-runtime/helpers/inherits");
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
 var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
@@ -15,21 +23,35 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 
 var Animal = function () {
+
 	/**
   * @constructor 类的默认方法
   * @Use 当new一个类的实例时，自动调用该方法，每个类都必须有一个constructor方法，如果没有手动写，会有一个空的constructor方法默认被添加
   * @Notice constructor 中的this表示实例对象 也可以手动改为成其他对象
   */
+
+	/**
+  * @property
+  * 类的实例属性
+  */
 	function Animal(obj) {
 		(0, _classCallCheck3.default)(this, Animal);
+		this.myProp = 30;
 
 		this.obj = obj;
 		this.liveWhere = this.liveWhere.bind(this); // 将this绑定到方法上
 		console.log("i will execute when new a instance of a class ");
+		console.log(this.myProp);
 	}
 
 	/*
   * @toString 类默认方法
+  */
+
+
+	/**
+  * @static property
+  * 类的静态属性
   */
 
 
@@ -79,6 +101,22 @@ var Animal = function () {
 		value: function whichAnimal() {
 			return "this is a static function";
 		}
+
+		/**
+   * @Static Function 静态函数
+   * this指向的是类本身 而不是实例
+   * 静态方法可被继承
+  	 */
+
+	}, {
+		key: "staticFun",
+		value: function staticFun() {
+
+			//调用静态属性
+			console.log(this.myStaticProp);
+			//调用静态方法
+			return this.whichAnimal();
+		}
 	}]);
 	return Animal;
 }();
@@ -88,6 +126,7 @@ var Animal = function () {
  */
 
 
+Animal.myStaticProp = 30;
 var cat = new Animal({ kinds: "鸟类", name: "蝴蝶", place: "亚洲" });
 
 // 调用实例方法
@@ -99,11 +138,31 @@ var liveWhere = cat.liveWhere;
 liveWhere("haha");
 // 调用静态方法
 console.log(Animal.whichAnimal());
+// 测试静态方法中的this
+console.log(Animal.staticFun());
 // 调用初始化属性值
 console.log(cat.obj.kinds);
 // getter 获取属性
 console.log("getter", cat.prop);
 // setter 设置属性
 cat.prop = 1111;
-
 console.log("update setter", cat.prop);
+
+/**
+ * [类的继承]
+ * @class
+ * @extends
+ */
+
+var Dog = function (_Animal) {
+	(0, _inherits3.default)(Dog, _Animal);
+
+	function Dog() {
+		(0, _classCallCheck3.default)(this, Dog);
+		return (0, _possibleConstructorReturn3.default)(this, (Dog.__proto__ || Object.getPrototypeOf(Dog)).apply(this, arguments));
+	}
+
+	return Dog;
+}(Animal);
+
+console.log("继承", Dog.staticFun());

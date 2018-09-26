@@ -50,3 +50,8 @@ var result1 = resData.next();
 result1.value.then(function (res) {
   console.log(res.data);
 });
+
+var result2 = resData.next();
+result2.value.then(function (res) {
+  console.log(res.data);
+});

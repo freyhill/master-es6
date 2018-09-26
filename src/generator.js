@@ -25,3 +25,8 @@ const result1 = resData.next();
 result1.value.then((res) => {
 	console.log(res.data);
 });
+
+const result2 = resData.next();
+result2.value.then((res) => {
+	console.log(res.data);
+});

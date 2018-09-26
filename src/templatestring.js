@@ -1,18 +1,13 @@
-var name = "Bob", time = "today";
-var s = `Hello ${name}, how are you ${time}?`
-var des = `
+const name = "Bob";
+const time = "today";
+const str = `Hello ${name}, how are you ${time}?`;
+const des = `
+this
+is
+a
+long
+desc
 
-a,
-sdf
-xxd
-df
-this.state.sdf
-xdf
-xdfc
-sdf
-${name}
+`;
 
-
-`
-
-console.log(des);
+console.log(des, str);
