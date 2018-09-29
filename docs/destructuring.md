@@ -1,6 +1,6 @@
 > @subject : es6 destructuring  
   @author : leinov    
-  @date : 2018-09-28
+  @date : 2018-09-28  
   @code : "../src/destructuring.js"
 ### 数组解构赋值
 
