@@ -46,16 +46,26 @@ function getData() {
 }
 getData("leinov.com", { data: { name: 1 } });
 
-var obj = { one: "hello", two: "world" };
-var _obj$one = obj.one,
-    one = _obj$one === undefined ? x : _obj$one,
-    _obj$two = obj.two,
-    two = _obj$two === undefined ? y : _obj$two;
+/**
+ * [对象结构赋值]
+ *
+ * 量必须与属性同名，才能取到正确的值
+ */
+var _time$time = { time: "2018-09-27", time2: "2018-09-28" },
+    time = _time$time.time,
+    time2 = _time$time.time2;
 
-console.log(one, two);
+console.log(time, time2); // 2018-09-27 2018-09-28
 
 // 对象的解构赋值是下面形式的简写（参见《对象的扩展》一章）。
 var _foo$bar = { foo: "aaa", bar: "bbb" },
-    foo = _foo$bar.foo,
-    bar = _foo$bar.bar;
+    foo1 = _foo$bar.foo,
+    bar2 = _foo$bar.bar;
 // 也就是说，对象的解构赋值的内部机制，是先找到同名属性，然后再赋给对应的变量。真正被赋值的是后者，而不是前者。
+
+console.log(foo1, bar2);
+
+/**
+ * [对象解构的默认值]
+ *
+ */

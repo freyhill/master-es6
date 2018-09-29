@@ -13,7 +13,7 @@ class Animal {
    * @static property
    * 类的静态属性
    */
- 	static myStaticProp = 30;
+ static myStaticProp = 30;
 
 	/**
 	 * @constructor 类的默认方法
