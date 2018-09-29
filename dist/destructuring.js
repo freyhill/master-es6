@@ -11,11 +11,16 @@ var _toArray3 = _interopRequireDefault(_toArray2);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
-* @destructuring
-* 从数组和对象中提取值 对变量进行赋值
-*/
+ * @subject : destructuring
+ * @author : leinov
+ * @date : 2018-09-28
+ */
 
-// es6 从数组中提取值，按照对应位置，对变量赋值
+/**
+ * [数组解构赋值]
+ *
+ * 从数组中提取值，按照对应位置，对变量赋值
+ */
 var num1 = 1,
     num2 = 2,
     num3 = 3;
@@ -27,29 +32,6 @@ var first = 1,
 // others is a arry
 
 console.log(first, others); // 1,[2,3,4,5]
-
-/**
- * [与解构赋值默认值结合使用]
- *
- * @param {String} value
- * @param {Object} value
- */
-function getData() {
-	var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
-
-	var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
-	    _ref$method = _ref.method,
-	    method = _ref$method === undefined ? "GET" : _ref$method,
-	    data = _ref.data,
-	    _ref$headers = _ref.headers,
-	    headers = _ref$headers === undefined ? {} : _ref$headers;
-
-	console.log(url);
-	console.log(method);
-	console.log(data);
-	console.log(headers);
-}
-getData("leinov.com", { data: { name: 1 } });
 
 /**
  * [对象结构赋值]
@@ -72,23 +54,18 @@ console.log(foo1, bar2);
 
 /**
  * [对象解构的默认值]
+ *
  * 默认值生效的条件是，对象的属性值严格等于undefined null则不生效 下面有例
  */
-var _ref2 = {},
-    _ref2$objx = _ref2.objx,
-    objx = _ref2$objx === undefined ? 3 : _ref2$objx;
 
-console.log(objx);
-
-// 用例
 function objTest() {
-	var _ref3 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-	    _ref3$url = _ref3.url,
-	    url = _ref3$url === undefined ? "https://pai.config.com" : _ref3$url,
-	    _ref3$data = _ref3.data,
-	    data = _ref3$data === undefined ? {} : _ref3$data,
-	    _ref3$method = _ref3.method,
-	    method = _ref3$method === undefined ? "GET" : _ref3$method;
+	var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+	    _ref$url = _ref.url,
+	    url = _ref$url === undefined ? "https://pai.config.com" : _ref$url,
+	    _ref$data = _ref.data,
+	    data = _ref$data === undefined ? {} : _ref$data,
+	    _ref$method = _ref.method,
+	    method = _ref$method === undefined ? "GET" : _ref$method;
 
 	console.log(url, data, method);
 }
@@ -113,21 +90,21 @@ var _helloWorld = "hello world",
 
 console.log(ab, bc, cd, de, ef, fg); // h e l l o [ ' ', 'w', 'o', 'r', 'l', 'd' ]
 
+
 /**
- * 【用途】
+ * [用途]
  */
 
 // 1.交换变量
 var change1 = 1;
 var change2 = 2;
-var _ref4 = [change2, change1];
-change1 = _ref4[0];
-change2 = _ref4[1];
+var _ref2 = [change2, change1];
+change1 = _ref2[0];
+change2 = _ref2[1];
 
 console.log(change1, change2); // 2 1
 
 // 2.函数返回多个值
-
 function returnValue() {
 	return [1, 2, 3, 4, 5, 6];
 }
@@ -160,22 +137,22 @@ var _returnObj = returnObj(),
 console.log(name, add, position, others2); // leinov Beijing China  Front-End developer { age: '22' }
 
 // 3.函数的参数
-function paramTest(_ref5) {
-	var _ref6 = (0, _toArray3.default)(_ref5),
-	    x = _ref6[0],
-	    y = _ref6[1],
-	    z = _ref6[2],
-	    o = _ref6.slice(3);
+function paramTest(_ref3) {
+	var _ref4 = (0, _toArray3.default)(_ref3),
+	    x = _ref4[0],
+	    y = _ref4[1],
+	    z = _ref4[2],
+	    o = _ref4.slice(3);
 
 	console.log(x, y, z, o);
 }
 paramTest(["param1", "param2", "param3", "param4", "param5"]); // param1 param2 param3 [ 'param4', 'param5' ]
 
-function paramTest2(_ref7) {
-	var _ref7$paramx = _ref7.paramx,
-	    paramx = _ref7$paramx === undefined ? "leinov" : _ref7$paramx,
-	    paramy = _ref7.paramy,
-	    paramz = _ref7.paramz;
+function paramTest2(_ref5) {
+	var _ref5$paramx = _ref5.paramx,
+	    paramx = _ref5$paramx === undefined ? "leinov" : _ref5$paramx,
+	    paramy = _ref5.paramy,
+	    paramz = _ref5.paramz;
 
 	console.log(paramx, paramy, paramz);
 }
