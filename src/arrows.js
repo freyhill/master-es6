@@ -10,6 +10,7 @@ const fn= ()=>{
     console.log("这是一个无参数的函数");
 }
 fn();
+
 // 一个参数
 arr.map(item=>{ //参数无括号
     console.log("one param" ,item);
@@ -21,6 +22,7 @@ const fn2 = x =>{
     console.log("这是一个参数的",x*x);
 } 
 fn2(3);
+
 // 多个参数
 arr.map((item,index)=>{
     console.log("多个参数",item ,index);
