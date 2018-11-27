@@ -26,3 +26,106 @@ const cfn = x=>{
 const c2= {name:"leinov",age:18}
 
 module.exports ={c1,cfn,c2}
+
+const obj2={
+    fn1(){
+        console.log("方法再对象里的简介表达");
+    },
+    fn2(){
+        console.log("方法再对象里的简介表达2");
+    }
+}
+
+obj2.fn1();
+obj2.fn2()
+
+/**  
+ * 属性名表达式
+ * */
+ const ages = 18;
+ const add = "beijing"
+ const obj3={
+     ['name']:"leinov",
+     [ages]:18,
+     add
+ }
+ console.log(obj3.name,obj3.add);
+
+ // 定义方法 在redux中handleActions会遇到这种使用
+ const GET_INDEX_DATA = "GET_INDEX_DATA";
+ const GET_LIST_DATA = "GET_LIST_DATA";
+ const obj4 = {
+     [GET_INDEX_DATA](state,action){
+        return {...state,infodata:action.payload}
+     },
+     [GET_LIST_DATA](state,action){
+        return {...state,infodata:action.payload}
+     }
+ }
+
+ const info = obj4['GET_INDEX_DATA']({name:"leinov",sex:1},{payload:{add:"beijing",age:18}})
+ console.log(info);
+
+
+ /**
+  * Object.assign()
+  * 将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。 
+  */
+ {
+    const obj5 = {
+        name: "leinov",
+        age: 18,
+        add: "beijing"
+      };
+      
+      const objAss = Object.assign({sex:1,job:"fe"},{like:"sing"}, obj5);
+      //等同与下面写法
+      console.log({...obj5,sex:1,job:"fe"});
+      console.log("Object.assign:",objAss);
+      // { sex: 1, job: "fe", name: "leinov", age: 18, add: "beijing"}
+    
+ }
+
+ /**
+  * Object.entries()
+  * 返回一个给定对象自身可枚举[属性的键值对]数组，其排列与使用 for...in 循环遍历该对象时返回的顺序一致（区别在于 for-in 循环也枚举原型链中的属性）
+  */
+ {
+    const obj6 = {
+        name:"leinov",
+        age:18,
+        sex:1
+    }
+    const entries1 = Object.entries(obj6);
+   console.log("Object.entries:",entries1);
+   // output [["name","leinov"],["age",18],["sex":1]]
+   console.log("Object.entries",Object.entries("leinov")); //[["0", "l"],["1", "e"],["2", "i"],["4", "o"],["5", "v"]]
+ }
+ 
+ /**
+  * Object.keys()
+  * 返回一个由一个给定对象的自身可枚举[属性]组成的数组，数组中属性名的排列顺序和使用 for...in 循环遍历该对象时返回的顺序一致 。
+  */
+ {
+    const obj7 = {
+         name:"leinov",
+         age:18,
+         add:"beijing"
+    }
+    const keys = Object.keys(obj7);
+    console.log("Object.keys:",keys);//["name", "age", "add"] obj7属性名的数组
+ }
+
+ /**
+  * Object.values()方法
+  * 返回一个给定对象自身的所有可枚举[属性值]的数组，值的顺序与使用for...in循环的顺序相同 ( 区别在于 for-in 循环枚举原型链中的属性 )。
+  */
+ {
+    const obj8 = {
+        name:"leinov",
+        age:18,
+        add:"beijing"
+    }
+    const values = Object.values(obj8);
+    console.log("Object.values",values);
+ }
