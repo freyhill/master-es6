@@ -54,7 +54,6 @@ var Animal = function () {
   * 类的静态属性
   */
 
-
 	(0, _createClass3.default)(Animal, [{
 		key: "toString",
 		value: function toString() {

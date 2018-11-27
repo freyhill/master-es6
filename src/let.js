@@ -1,10 +1,8 @@
-let a;
-a.name = 1;
-console.error("a.");
-for (let i = 0; i < 10; i++) {
-/**
- * @param it's a test function
- */
+let a = 10;
+console.error(a);
 
-	console.log("a.");
+for (let i = 0; i < 10; i++) {
+	console.log(i);
 }
+
+console.log(i); //报错

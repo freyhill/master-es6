@@ -1,12 +1,10 @@
 "use strict";
 
-var a = void 0;
-a.name = 1;
-console.error("a.");
-for (var i = 0; i < 10; i++) {
-  /**
-   * @param it's a test function
-   */
+var a = 10;
+console.error(a);
 
-  console.log("a.");
+for (var _i = 0; _i < 10; _i++) {
+	console.log(_i);
 }
+
+console.log(i); //报错
