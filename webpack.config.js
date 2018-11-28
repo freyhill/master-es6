@@ -1,10 +1,20 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
  
 module.exports = {
-  entry: './src/test.js',
+  entry: {
+    'arrows':"./src/arrows.js",
+    'async-await':"./src/async-await.js",
+    'destructuring':'./src/destructuring.js',
+    'promise':'./src/promise.js',
+    'class':"./src/class.js",
+    'object':'./src/object.js',
+    'templatestring':'./src/templatestring.js',
+    "generator":"./src/generator.js",
+    "function":"./src/function.js"
+  },
   output: {
     path: __dirname + '/dist',
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   module: {
 		rules: [

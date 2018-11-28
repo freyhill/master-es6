@@ -68,7 +68,7 @@ obj2.fn2()
 
 
  /**
-  * Object.assign()
+  * Object.assign()方法
   * 将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。 
   */
  {
@@ -87,7 +87,7 @@ obj2.fn2()
  }
 
  /**
-  * Object.entries()
+  * Object.entries()方法
   * 返回一个给定对象自身可枚举[属性的键值对]数组，其排列与使用 for...in 循环遍历该对象时返回的顺序一致（区别在于 for-in 循环也枚举原型链中的属性）
   */
  {
@@ -103,7 +103,7 @@ obj2.fn2()
  }
  
  /**
-  * Object.keys()
+  * Object.keys()方法
   * 返回一个由一个给定对象的自身可枚举[属性]组成的数组，数组中属性名的排列顺序和使用 for...in 循环遍历该对象时返回的顺序一致 。
   */
  {
@@ -128,4 +128,18 @@ obj2.fn2()
     }
     const values = Object.values(obj8);
     console.log("Object.values",values);
+ }
+
+ /**
+  * Object.freeze()方法
+  * 可以冻结一个对象，冻结指的是不能向这个对象添加新的属性，不能修改其已有属性的值，不能删除已有属性，以及不能修改该对象已有属性的可枚举性、可配置性、可写性。该方法返回被冻结的对象
+  */
+ {
+     const obj9 = {
+         name:"leinov",
+         age:18
+     }
+     const o2 = Object.freeze(obj9);
+     o2.name="11"
+     console.log(o2);//{name: "leinov", age: 18}
  }

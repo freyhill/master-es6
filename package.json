@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "",
-    "build": "babel src --out-dir dist",
+    "start": "node ./www.js",
     "dev": "webpack-dev-server  --mode development --devtool inline-source-map --hot",
+    "build": "webpack --mode production",
     "lint": "eslint src/"
   },
   "author": "leinov",

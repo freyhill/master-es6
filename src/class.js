@@ -7,14 +7,12 @@ class Animal {
 	 * @property
 	 * 类的实例属性
 	 */
-	 myProp = 30;
 
   /**
    * @static property
    * 类的静态属性
    */
 	 
-   static myStaticProp = 30;
 
 	/**
 	 * @constructor 类的默认方法
