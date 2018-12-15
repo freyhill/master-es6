@@ -2,16 +2,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
  
 module.exports = {
   entry: {
-   'arrows':"./src/arrows.js",
-    'async-await':"./src/async-await.js",
-    'destructuring':'./src/destructuring.js',
-    'promise':'./src/promise.js',
-    'class':"./src/class.js",
-    'object':'./src/object.js',
-    'templatestring':'./src/templatestring.js',
-    "generator":"./src/generator.js",
-    "function":"./src/function.js",
-    "import":"./src/import.js"
+  //  'arrows':"./src/arrows.js",
+  //   'async-await':"./src/async-await.js",
+  //   'destructuring':'./src/destructuring.js',
+  //   'promise':'./src/promise.js',
+  //   'class':"./src/class.js",
+  //   'object':'./src/object.js',
+  //   'templatestring':'./src/templatestring.js',
+  //   "generator":"./src/generator.js",
+  //   "function":"./src/function.js",
+  //   "import":"./src/import.js",
+    "this":"./src/this.js"
   },
   output: {
     path: __dirname + '/dist',
