@@ -27,8 +27,10 @@ console.log(x); //导出字符串
  ********************/
 //第一种方式 通过{}将需要导出的变量，函数包起来
 import {GET_USER_DATA,getData,name} from './export.js'
+
 console.log("import export",GET_USER_DATA)
 console.log("import export",getData());
+name = "name changed"
 console.log("name",name);
 
 // 第二种方式 通过属性符号名导入整个模块儿 与第一种效果相同
