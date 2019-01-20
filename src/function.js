@@ -44,3 +44,6 @@ foo2({name:4,age:4});
  // name属性
  const myfn = x=> x+1;
  console.log(myfn.name); // myfn
+
+ import {name} from './export';
+ console.log("fun name",name);

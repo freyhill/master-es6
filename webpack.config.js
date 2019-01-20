@@ -13,7 +13,10 @@ module.exports = {
   //   "function":"./src/function.js",
   //   "import":"./src/import.js",
   //   "this":"./src/this.js",
-  "closure":"./src//closure.js"
+  //   "closure":"./src//closure.js"
+    "array":"./src/array.js"
+
+
   },
   output: {
     path: __dirname + '/dist',
@@ -38,6 +41,8 @@ module.exports = {
 		open: true,
 	},
   plugins: [
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      template:"./index.html"
+    })
   ]
 }
