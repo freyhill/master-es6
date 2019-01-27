@@ -2,9 +2,10 @@
  * @file 数组方法
  * @author leinov
  * @date 2019-1-19
+ * @flag true:会改变原数组，false:不会改变原数组
  */
 
- // push 在数组尾部添加项
+ // push 在数组尾部添加项 --true--
  {
     var arr = ["a","b"];
     var count = arr.push("c");
@@ -12,7 +13,7 @@
     console.table(arr); // ["a","b","c"]
  }
 
- // pop 在数组的头部添加 unshift
+ // unshift 在数组的头部添加  --true--
  {
      var arr = ["s","k"];
      var count = arr.unshift("m");
@@ -20,7 +21,7 @@
      console.table(arr); // ["m","s","k"]
  }
 
- // pop 在数组尾部删除项
+ // pop 在数组尾部删除项 --true--
  {
      var arr = ["x","y","z"];
      var item = arr.pop();
@@ -28,7 +29,7 @@
      console.table(arr); // ["x","y"]
  }
 
- // shift 在数组头部删除项
+ // shift 在数组头部删除项 --true--
  {
     var arr = ["m","n","q"];
     var item = arr.shift();
@@ -36,14 +37,14 @@
     console.table(arr); // ["n","q"]
 }
 
-// reverse 翻转数组
+// reverse 翻转数组 --true--
 {
     var arr = ["x",1,"b","dd"];
     arr.reverse();
     console.table(arr); // ["dd","b",1,"x"]
 }
 
-// sort 排序
+// sort 排序 --true--
 {
     var arr = [23,1,2,6,3];
     newArr = arr.sort((value1,value2)=>{
@@ -55,10 +56,11 @@
             return 0;
         }
     });
+    console.log(arr);
     console.table(newArr);
 }
 
-// concat 拼接数组
+// concat 拼接数组 --false--
 {
     var arr = [1,2,3];
     var arr2 = arr.concat(4,[5,6]);
@@ -66,7 +68,7 @@
     console.table(arr2); // [1,2,3,4,5,6]
 }
 
-// slice 截取数组，可以是一个参数(截到最后一位),两个参数(从开始下标截到结束下标之间的项，但不包含结束项) 不会影响原有数组长度
+// slice 截取数组，可以是一个参数(截到最后一位),两个参数(从开始下标截到结束下标之间的项，但不包含结束项) 不会影响原有数组长度 --false--
 {
     var arr = [1,2,3,4,5];
     var newArr = arr.slice(3) 
@@ -76,7 +78,7 @@
     console.log(newArr2); // [2,3] //不包含结束项
 }
 
-// splice 数组的删除，插入，替换 
+// splice 数组的删除，插入，替换 --true--
 {
     // 删除
     var company = ["google","airbnb","hulu","alibaba","tencent"];
@@ -107,7 +109,7 @@
     console.log(lastIndex2); // 5 反方向
 }
 
-// every迭代，没相符合则返回true
+// every迭代，每一项都符合则返回true --false--
 {   
     var ha = [1,2,3,4]
 
@@ -119,7 +121,7 @@
     console.log(isbig); // false
 }
 
-// filter 返回true的组成新数组
+// filter 返回true的组成新数组 --false--
 {
     var arr = [{city:"beijing",count:2000},{city:"xi'an",count:800},{city:"chengdu",count:1500},{city:"wuhan",count:1200}];
     var newArr = arr.filter((item,index,arr)=>{
@@ -129,15 +131,16 @@
     console.table(arr); // 原数组
 }
 
-// forEach 对每项运行函数，没有返回值
+// forEach 对每项运行函数，没有返回值 --false--
 {
    var arr = [1,2,3,4];
    var newArr = arr.forEach((item,index,arr)=>{
     console.log(item*2); // 2,4,6,8
    }) 
+   console.table(arr);
 }
 
-// map 对每项执行函数并返回新数组
+// map 对每项执行函数并返回新数组 --false--
 {
     var arr = [1,2,3,4];
     var newArr = arr.map((item,index,arr)=>{

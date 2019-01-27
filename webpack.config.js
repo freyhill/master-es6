@@ -14,8 +14,8 @@ module.exports = {
   //   "import":"./src/import.js",
   //   "this":"./src/this.js",
   //   "closure":"./src//closure.js",
-  //  "array":"./src/array.js",
-    "hoisting":"./src/hoisting"
+   "array":"./src/array.js",
+   //  "hoisting":"./src/hoisting"
 
   },
   output: {
