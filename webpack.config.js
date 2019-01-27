@@ -13,9 +13,9 @@ module.exports = {
   //   "function":"./src/function.js",
   //   "import":"./src/import.js",
   //   "this":"./src/this.js",
-  //   "closure":"./src//closure.js"
-    "array":"./src/array.js"
-
+  //   "closure":"./src//closure.js",
+  //  "array":"./src/array.js",
+    "hoisting":"./src/hoisting"
 
   },
   output: {
