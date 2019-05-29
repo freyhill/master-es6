@@ -5,6 +5,7 @@
 
  /**
   * 属性的简单表达 
+  * 如果属性名和值相同则可简写为{x:x,y:y} === {x,y}
   * */ 
  // 简单实例
 const name = "leinov";
@@ -20,7 +21,7 @@ console.log(data); // {x:1,y:2}
 
 // CommonJS 模块输出一组变量非常合适使用简洁写法。
 const c1 = 1;
-const cfn = x=>{
+const cfn = x => {
     return x*x;
 }
 const c2= {name:"leinov",age:18}
@@ -141,5 +142,21 @@ obj2.fn2()
      }
      const o2 = Object.freeze(obj9);
      o2.name="11"
-     console.log(o2);//{name: "leinov", age: 18}
+     console.log('Object.freeze', o2);//{name: "leinov", age: 18}
+ }
+
+ /**
+  * Object.seal()方法
+  * 封闭一个对象，阻止添加新属性并将所有现有属性标记为不可配置。密封一个对象会让这个对象变的不能添加新属性，且所有已有属性会变的不可配置。属性不可配置的效果就是属性变的不可删除，以及一个数据属性不能被重新定义成为访问器属性
+  */
+ {
+     const obj10 = {
+         name: 'leinov',
+         age: 18
+     }
+     obj10.add = 'beijing';
+     console.log('Obj10', obj10);
+     Object.seal(obj10);
+     obj10.company = 'zyb';
+     console.log('Object.seal()', obj10);
  }
