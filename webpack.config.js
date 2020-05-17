@@ -12,11 +12,11 @@ module.exports = {
   //   "generator":"./src/generator.js",
   //   "function":"./src/function.js",
   //   "import":"./src/import.js",
-  //   "this":"./src/this.js",
+     "this":"./src/this.js",
   //   "closure":"./src//closure.js",
-   "array":"./src/array.js",
+   //"array":"./src/array.js",
    //  "hoisting":"./src/hoisting"
-
+    
   },
   output: {
     path: __dirname + '/dist',
