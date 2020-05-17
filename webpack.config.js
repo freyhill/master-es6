@@ -7,7 +7,7 @@ module.exports = {
   //   'destructuring':'./src/destructuring.js',
   //   'promise':'./src/promise.js',
   //   'class':"./src/class.js",
-  //   'object':'./src/object.js',
+    'object':'./src/object.js',
   //   'templatestring':'./src/templatestring.js',
   //   "generator":"./src/generator.js",
   //   "function":"./src/function.js",
@@ -15,6 +15,7 @@ module.exports = {
      "this":"./src/this.js",
   //   "closure":"./src//closure.js",
    //"array":"./src/array.js",
+ 
    //  "hoisting":"./src/hoisting"
     
   },
