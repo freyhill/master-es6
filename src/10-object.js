@@ -22,18 +22,19 @@ console.log(data); // {x:1,y:2}
 // CommonJS 模块输出一组变量非常合适使用简洁写法。
 const c1 = 1;
 const cfn = x => {
-    return x*x;
+    return x * x;
 }
 const c2= {name:"leinov",age:18}
 
 module.exports ={c1,cfn,c2}
 
+// 方法在对象中的简写
 const obj2={
     fn1(){
-        console.log("方法再对象里的简介表达");
+        console.log("方法在对象里的简介表达");
     },
     fn2(){
-        console.log("方法再对象里的简介表达2");
+        console.log("方法在对象里的简介表达2");
     }
 }
 
@@ -160,3 +161,8 @@ obj2.fn2()
      obj10.company = 'zyb';
      console.log('Object.seal()', obj10);
  }
+
+ /**
+  * Object.is方法
+  * 
+  */
