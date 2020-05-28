@@ -7,12 +7,13 @@ module.exports = {
   //   'destructuring':'./src/destructuring.js',
   //   'promise':'./src/promise.js',
   //   'class':"./src/class.js",
-    'object':'./src/object.js',
+  //  'object':'./src/object.js',
   //   'templatestring':'./src/templatestring.js',
   //   "generator":"./src/generator.js",
   //   "function":"./src/function.js",
   //   "import":"./src/import.js",
-     "this":"./src/this.js",
+    // "this":"./src/this.js",
+     "decorator": "./src/decorator.js",
   //   "closure":"./src//closure.js",
    //"array":"./src/array.js",
  
@@ -31,7 +32,10 @@ module.exports = {
 				use: {
 					loader:"babel-loader",
 					options:{
-						presets: ["@babel/preset-env"]
+            presets: ["@babel/preset-env",
+            {
+              'plugins': ['@babel/plugin-proposal-class-properties']}
+            ]
 					}
 				}
       }]
