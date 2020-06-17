@@ -36,3 +36,4 @@ async function asyncFunc() {
 asyncFunc().then((x) => {
 	console.log(x);
 });
+console.log(1);
