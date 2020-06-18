@@ -21,3 +21,4 @@
  m1.forEach((value, key) => {
     console.log(value.score, key.name); // 90 leinov
  })
+ console.log('111');
