@@ -55,6 +55,6 @@ function strFun(string, role, gender) {
     gender = gender === 1 ? 'male' : 'female';
     return `${role} ${string[1]} ${gender}` 
 }
-const address = strFun`${role} is a ${gender}`
+const address = strFun`${role} is a ${gender} hh`
 
 console.log(address);
