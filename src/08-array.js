@@ -180,3 +180,37 @@ log('//////////');
     })
     log(sum);
 }
+
+log('-------------es6----------------')
+
+// entries / keys / values
+
+{
+    let arr = ['a', 'b', 'c', 'd'];
+    let enArr = arr.entries();
+    log('entries', enArr.next().value) // [0, 'a']
+
+    let keysArr = arr.keys();
+    log('keys', keysArr.next().value);
+
+    let valuesArr = arr.values();
+    log('values', valuesArr.next().value);
+    log('values', valuesArr.next().value)
+}
+// from 
+{
+    let arr = [3,4,5];
+    let newArr = Array.from(arr);
+    arr.push(6);
+    log('old Array has push a new value 6', arr)
+    log('new array from arr', newArr)
+}
+
+// fill
+{
+    let arr = Array(6).fill(1);
+    log('fill', arr);
+
+    arr.fill(3, 2, 4); // 从下标为2开始到下标为4（不含4）结束填充3
+    log(arr);
+}
