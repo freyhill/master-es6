@@ -14,11 +14,9 @@
  * 不能带大括号 
  */
 
-import x from './export-default';
-import exFun from './export-default';
-console.log(x); //导出字符串
-//exFun();
-//x.name(1); //class
+import fn from './17-export-default';
+console.log(fn());
+
 
 
 
@@ -26,19 +24,21 @@ console.log(x); //导出字符串
  * 引入 export 导出的文件
  ********************/
 //第一种方式 通过{}将需要导出的变量，函数包起来
-import {GET_USER_DATA,getData,name} from './export.js'
+import {GET_USER_DATA,getData,name} from './16-export.js'
 
-console.log("import export",GET_USER_DATA)
-console.log("import export",getData());
-name = "name changed"
+console.log("import export GET_USER_DATA", GET_USER_DATA)
+console.log("import export getData()", getData());
+console.log("import export name", name);
+name = "leinov2"
 console.log("name",name);
 
 // 第二种方式 通过属性符号名导入整个模块儿 与第一种效果相同
-import * as getdata from './export.js'
-console.log("import * as getdata from './export.js'",getdata.GET_USER_DATA);
-console.log("import * as getdata from './export.js'",getdata.getData());
-console.log(getdata.name);
-console.log(getdata);
+import * as ex from './16-export.js'
+console.log("import * as getdata from './16-export.js'", ex.GET_USER_DATA);
+console.log("import * as getdata from './16-export.js'", ex.getData());
+console.log(ex.name);
+console.log(ex);
+
 // 引入export 重命名的函数
-import {waf} from './export.js'
-console.log("as",waf());
+import {waf} from './16-export.js'
+console.log("as", waf());

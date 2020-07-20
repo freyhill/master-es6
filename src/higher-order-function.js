@@ -18,8 +18,8 @@
 {
     // map 由于map()方法定义在JavaScript的Array中，我们调用Array的map()方法，传入我们自己的函数，就得到了一个新的Array作为结果：
     
-    function pow(x){
-        return x*x;
+    function pow(x) {
+        return x * x;
     }
     const arr = [1,2,3];
     const newArr = arr.map(pow);
@@ -34,10 +34,10 @@
     // reduce 再看reduce的用法。Array的reduce()把一个函数作用在这个Array的[x1, x2, x3...]上，这个函数必须接收两个参数，reduce()把结果继续和序列的下一个元素做累积计算，其效果就是：
 
     const arr = [1,2,3,4,5,6];
-    const newArr = arr.reduce((x,y)=>{
+    const newArr = arr.reduce((x, y) => {
         //return x*y; // 720
         //return x*10+y; // 123456;
-        return x+y; // 21
+        return x + y; // 21
     })
     console.log(newArr);
 }
@@ -45,7 +45,7 @@
 {   // 测试
     const names = ["leinov","sfse","xd"];
     const newNames = names.map((item)=>{
-        const newItem =  item.charAt(0).toUpperCase()+item.substring(1).toLowerCase();
+        const newItem =  item.charAt(0).toUpperCase() + item.substring(1).toLowerCase();
         return newItem;
     })
     console.log(newNames); //[ 'Leinov', 'Sfse', 'Xd' ]
@@ -74,9 +74,9 @@
     // sort 排序
     const arr = [1,10,23,5,4,8];
     const sortArr = arr.sort((x,y)=>{
-        if(x<y){
+        if(x < y){
             return -1
-        }else if(x===y){
+        }else if(x === y){
             return 0;
         }else{
             return 1;

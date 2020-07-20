@@ -7,7 +7,7 @@
 // 直接export变量
 export const GET_USER_DATA = 'GET_USER_DATA';
 export function getData(){
-    return {name:"leinov",age:18}
+    return {name: "leinov", age: 18}
 }
 
 // export一个由大括号包起来一组变量
